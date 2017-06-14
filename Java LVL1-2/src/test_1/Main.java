@@ -19,6 +19,13 @@ public class Main {
 
     public static void main(String[] args) {
 	// 1:
-        new initMassive().printMassive();
+        InitMassive test1 = new InitMassive();
+        test1.printMassive();
+    // 2:
+        int[] mas8 = new int[8]; int k = 0;
+        for (int i = 0; i <= 21; i = i + 3) {
+            mas8[k++] = i;
+            System.out.print(i + " ");
+        }
     }
 }
