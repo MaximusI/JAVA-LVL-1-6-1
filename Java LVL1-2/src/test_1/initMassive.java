@@ -12,6 +12,10 @@ public class InitMassive {
     public void printMassive() {
         for (int i = 0; i < massive.length; i++) {
             massive[i] = (int) Math.round(Math.random() * 1);
+            if (massive[i] == 1)
+                massive[i] = 0;
+            else
+                massive[i] = 0;
         }
         System.out.println(Arrays.toString(massive));
     }
