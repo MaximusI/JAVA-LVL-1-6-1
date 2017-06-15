@@ -51,5 +51,19 @@ public class Main {
             if (i < min) min = i;
             else if (i > max) max = i;
         }   System.out.println("min-" + min + " " + "max-" + max);
+    // 6:
+        int[] mas6 = new int[]{1, 1};
+        System.out.println(checkBalance(mas6));
+    }
+
+    public static boolean checkBalance(int[] massive) {
+        int left = 0, right = 0;
+        if (massive.length == 2) return (massive[0] == massive[1]);
+        for (int i = 0; i < massive.length; i++) {
+            if (i <= massive.length / 2 ) {
+                left += massive[i];
+            } else right += massive[i];
+        }   //System.out.println("legt: " + left + " ; " + "right: " + right);
+        return (left == right);
     }
 }
