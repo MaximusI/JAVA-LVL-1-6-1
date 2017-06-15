@@ -44,5 +44,12 @@ public class Main {
                 } else mas2D[i][j] = 8;
             }   System.out.println(Arrays.toString(mas2D[i]));
         }
+    // 5:
+        int[] mas5 = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 100};
+        int max = mas5[0], min = mas5[0];
+        for (int i: mas5) {
+            if (i < min) min = i;
+            else if (i > max) max = i;
+        }   System.out.println("min-" + min + " " + "max-" + max);
     }
 }
