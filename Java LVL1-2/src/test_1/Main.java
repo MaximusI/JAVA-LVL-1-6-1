@@ -1,5 +1,7 @@
 package test_1;
 
+import java.util.Arrays;
+
 public class Main {
     /*
     * 1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
@@ -26,6 +28,12 @@ public class Main {
         for (int i = 0; i <= 21; i = i + 3) {
             mas8[k++] = i;
             System.out.print(i + " ");
-        }
+        } System.out.println();
+    // 3:
+        int[] mas6x2 = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < mas6x2.length; i++) {
+            if (mas6x2[i] < 6)
+                mas6x2[i] *= 2;
+        } System.out.println(Arrays.toString(mas6x2));
     }
 }
