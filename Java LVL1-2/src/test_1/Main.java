@@ -35,5 +35,14 @@ public class Main {
             if (mas6x2[i] < 6)
                 mas6x2[i] *= 2;
         } System.out.println(Arrays.toString(mas6x2));
+    // 4:
+        int[][] mas2D = new int[9][9];
+        for (int i = 0; i < mas2D.length; i++) {
+            for (int j = 0; j < mas2D.length; j++) {
+                if (i == j || mas2D.length - i - 1 == j) {
+                    mas2D[i][j] = 1;
+                } else mas2D[i][j] = 8;
+            }   System.out.println(Arrays.toString(mas2D[i]));
+        }
     }
 }
