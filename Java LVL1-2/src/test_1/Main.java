@@ -20,40 +20,48 @@ public class Main {
     пользоваться вспомогательными массивами.*/
 
     public static void main(String[] args) {
-	// 1:
+        // 1:
         InitMassive test1 = new InitMassive();
         test1.printMassive();
-    // 2:
-        int[] mas8 = new int[8]; int k = 0;
+        // 2:
+        int[] mas8 = new int[8];
+        int k = 0;
         for (int i = 0; i <= 21; i = i + 3) {
             mas8[k++] = i;
             System.out.print(i + " ");
-        } System.out.println();
-    // 3:
+        }
+        System.out.println();
+        // 3:
         int[] mas6x2 = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         for (int i = 0; i < mas6x2.length; i++) {
             if (mas6x2[i] < 6)
                 mas6x2[i] *= 2;
-        } System.out.println(Arrays.toString(mas6x2));
-    // 4:
+        }
+        System.out.println(Arrays.toString(mas6x2));
+        // 4:
         int[][] mas2D = new int[9][9];
         for (int i = 0; i < mas2D.length; i++) {
             for (int j = 0; j < mas2D.length; j++) {
                 if (i == j || mas2D.length - i - 1 == j) {
                     mas2D[i][j] = 1;
                 } else mas2D[i][j] = 8;
-            }   System.out.println(Arrays.toString(mas2D[i]));
+            }
+            System.out.println(Arrays.toString(mas2D[i]));
         }
-    // 5:
+        // 5:
         int[] mas5 = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 100};
         int max = mas5[0], min = mas5[0];
-        for (int i: mas5) {
+        for (int i : mas5) {
             if (i < min) min = i;
             else if (i > max) max = i;
-        }   System.out.println("min-" + min + " " + "max-" + max);
-    // 6:
+        }
+        System.out.println("min-" + min + " " + "max-" + max);
+        // 6:
         int[] mas6 = new int[]{1, 1};
         System.out.println(checkBalance(mas6));
+        // 7:
+        int[] mas7 = new int[]{1, 2, 3, 4, 0, -1};
+        System.out.println(shiftN(mas7, 2));
     }
 
     public static boolean checkBalance(int[] massive) {
@@ -65,5 +73,21 @@ public class Main {
             } else right += massive[i];
         }   //System.out.println("legt: " + left + " ; " + "right: " + right);
         return (left == right);
+    }
+
+    public static int[] shiftN(int[] massive, int n) {
+        int sft = n % massive.length;
+        if (sft > 0) {
+            for (int i = 0; i < massive.length; i++) {
+                int buf = massive[i];
+                if (sft == massive.length) sft = 0;
+                massive[i] = massive[sft];
+                sft++;
+            }
+        }
+        System.out.println(Arrays.toString(massive));
+        System.out.println("sft = " + sft);
+
+        return null;
     }
 }
