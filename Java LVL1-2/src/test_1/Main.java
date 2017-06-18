@@ -60,8 +60,8 @@ public class Main {
         int[] mas6 = new int[]{1, 1};
         System.out.println(checkBalance(mas6));
         // 7:
-        int[] mas7 = new int[]{1, 2, 3, 4, 0, -1};
-        System.out.println(shiftN(mas7, 2));
+        int[] mas7 = new int[]{1, 2, 3, 4, 0, -1, 8, 9};
+        System.out.println(shiftN(mas7, 4));
     }
 
     public static boolean checkBalance(int[] massive) {
@@ -77,11 +77,13 @@ public class Main {
 
     public static int[] shiftN(int[] massive, int n) {
         int sft = n % massive.length;
-        if (sft > 0) {
+        if (sft != 0) {
             for (int i = 0; i < massive.length; i++) {
-                int buf = massive[i];
-                if (sft == massive.length) sft = 0;
+                if (i > n - 1) continue;
+                int tmp = massive[i];
                 massive[i] = massive[sft];
+                massive[sft] = tmp;
+                if (sft < massive.length - 1)
                 sft++;
             }
         }
