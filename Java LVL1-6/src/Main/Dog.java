@@ -1,8 +1,5 @@
 package Main;
 
-/**
- * Created by Maxim on 28.06.2017.
- */
 public class Dog extends Animal {
 
 
